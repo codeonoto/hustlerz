@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="bg-black text-white px-8 py-4 shadow-md">
-        <div className="container mx-auto flex items-center justify-between">
+        <div className="container mx-auto flex items-center justify-around">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Image src={logo} alt="Logo" className="h-16 w-auto" />
@@ -44,7 +44,7 @@ const Navbar = () => {
           {/* Desktop Contact Us Button */}
           <Link href="/contact">
             <div className="relative justify-center hidden md:block">
-              <InteractiveHoverButton />
+              <InteractiveHoverButton text="Contact" />
             </div>
           </Link>
 
@@ -62,8 +62,9 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Menu Links */}
-      <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}  bg-gray-900 rounded-3xl  text-white p-6 `}>
-        <ul className="space-y-6 text-md font-semibold">
+      <div className="relative">
+      <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"} z-50 right-0   bg-black absolute rounded-3xl  text-white p-6 `}>
+        <ul className="space-y-6  text-md font-semibold">
           <li className="hover:text-blue-400 flex items-center  space-x-2">
             <HouseIcon/>
             <Link href="/">Home</Link>
@@ -88,12 +89,14 @@ const Navbar = () => {
           <li className="hover:text-blue-400">
             <Link href="/contact">
               <div className="relative justify-center">
-                <InteractiveHoverButton />
+                <InteractiveHoverButton text="Contact" />
               </div>
             </Link>
           </li>
         </ul>
       </div>
+      </div>
+
     </>
   );
 };
