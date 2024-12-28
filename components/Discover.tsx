@@ -1,76 +1,71 @@
 "use client";
-
 import React from "react";
-import { FiEdit, FiCode, FiSettings } from "react-icons/fi";
-import Link from "next/link";
+import { BsFillBrushFill } from "react-icons/bs";
 
 const services = [
   {
-    id: 1,
     title: "Design Services",
-    description: "At LandFree, our design team is passionate about creating stunning",
-    icon: <FiEdit className="text-blue-500 text-2xl" />,
+    description: "Our design team creates stunning visuals.",
     tags: ["UI & UX Design", "Graphic Design", "Branding", "Web Design", "Carousel Design"],
   },
   {
-    id: 2,
     title: "Engineering Services",
-    description: "Empowering progress through meticulous engineering services",
-    icon: <FiCode className="text-blue-500 text-2xl" />,
-    tags: ["Web Development", "App Development", "Node.js", "React.js", "MySQL", "Firebase"],
+    description: "Innovative solutions for engineering projects.",
+    tags: ["Mechanical Design", "Civil Engineering", "Electrical Systems"],
   },
   {
-    id: 3,
-    title: "Management Services",
-    description: "Efficiently navigate success with our project management services",
-    icon: <FiSettings className="text-blue-500 text-2xl" />,
-    tags: ["Risks management", "Resource management", "Quality Control", "Project Planning"],
+    title: "Cloud Services",
+    description: "Scalable and secure cloud solutions.",
+    tags: ["Cloud Hosting", "Data Storage", "Cloud Security", "Infrastructure Setup"],
   },
 ];
 
 const Discover = () => {
   return (
-    <section className="py-12 bg-black text-white">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl md:text-5xl font-bold text-start text-blue-500">
-          Discover our full range of services
+    <div className="min-h-screen w-full p-6 flex flex-col items-center justify-center ">
+      <div className="max-w-7xl w-full">
+        {/* Heading Section */}
+        <h2 className="text-[36px] sm:text-[40px] md:text-[50px] font-extrabold text-blue-500 text-center md:text-left mb-6">
+          Discover Our Full Range of Services
         </h2>
-        <p className="mt-4 text-gray-400  text-start w-[60%]">
-          LandFree offers a diverse array of expertly crafted services, seamlessly merging creativity and technology to deliver solutions that exceed expectations.
+        <p className="text-[18px] sm:text-[20px] md:text-[24px] text-gray-700 mt-4 text-center font-semibold md:text-left leading-relaxed">
+          LandFree offers a diverse array of expertly crafted services,
+          seamlessly merging creativity and technology to deliver solutions that
+          exceed expectations.
         </p>
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 px-6 md:px-0 max-w-6xl mx-auto">
-        {services.map((service) => (
-          <div
-            key={service.id}
-            className="bg-gray-600 rounded-lg p-6 shadow-lg hover:shadow-yellow-400/50 transition-shadow duration-300"
-          >
-            <div className="flex items-center space-x-3">
-              {service.icon}
-              <h3 className="text-xl font-semibold text-blue-500">{service.title}</h3>
-            </div>
-            <p className="mt-4 text-gray-400">{service.description}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {service.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="text-sm bg-gray-700 px-3 py-1 rounded-full text-gray-300"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <Link
-              href="/book-call"
-              className="mt-6 inline-block bg-yellow-400 text-black px-5 py-2 rounded-full text-sm font-medium hover:bg-yellow-500 transition-colors"
+        {/* Service Cards */}
+        <div className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className=" bg-slate-950 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-transform duration-300 transform hover:scale-105"
             >
-              Book a Call &rarr;
-            </Link>
-          </div>
-        ))}
+              <div className="flex items-center space-x-4 mb-4">
+                <BsFillBrushFill className="text-blue-500 text-3xl" />
+                <h3 className="text-[26px] font-bold text-blue-500">{service.title}</h3>
+              </div>
+              <p className="text-gray-400 mb-6 text-[27px] leading-relaxed">
+                {service.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {service.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="bg-gray-700 text-gray-300 text-[18px] px-3 py-1 rounded-full hover:bg-blue-500 hover:text-white transition-colors"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <button className="text-blue-500 text-sm w-full text-[24px] bg-gray-900 p-3 rounded-xl  hover:text-white flex items-center justify-center gap-2 font-medium">
+                Book a Call <span>↗</span>
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

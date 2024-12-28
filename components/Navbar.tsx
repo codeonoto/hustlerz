@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="bg-black text-white px-8 py-4 shadow-md">
-        <div className="container mx-auto flex items-center justify-around">
+        <div className="container mx-auto flex items-center justify-evenly">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Image src={logo} alt="Logo" className="h-16 w-auto" />
