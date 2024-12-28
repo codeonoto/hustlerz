@@ -2,7 +2,6 @@
 import React from "react";
 import Ripple from "@/components/ui/ripple";
 import RetroGrid from "@/components/ui/retro-grid";
-import anime from "@/app/image/animation.gif"
 import { CgArrowRight } from "react-icons/cg";
 import logo2 from "@/app/image/logo2.png";
 import Image from "next/image";

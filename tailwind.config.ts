@@ -13,6 +13,11 @@ const config: Config = {
 			space: ["Space Grotesk", "serif"],
 		  },
   		colors: {
+			Blue : "#66e0ff",
+			darkBlue: "#00ccff",
+			blue: {
+				DEFAULT : "#66e0ff, 100"
+			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { BsFillBrushFill } from "react-icons/bs";
 
 const services = [
@@ -20,35 +21,61 @@ const services = [
   },
 ];
 
+const textVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
+
+const gridVariants = {
+  hidden: { opacity: 0, y: 100 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", staggerChildren: 0.2 } },
+};
+
 const Discover = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: true });
+
   return (
-    <div className="min-h-screen w-full p-6 flex flex-col items-center justify-center ">
-      <div className="max-w-7xl w-full">
+    <div className="min-h-screen w-full p-6 flex flex-col items-center justify-center">
+      <div className="max-w-7xl w-full" ref={sectionRef}>
         {/* Heading Section */}
-        <h2 className="text-[36px] sm:text-[40px] md:text-[50px] font-extrabold text-blue-500 text-center md:text-left mb-6">
+        <motion.h2
+          className="text-[36px] sm:text-[40px] md:text-[50px] font-extrabold text-darkBlue text-center md:text-left mb-6"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={textVariants}
+        >
           Discover Our Full Range of Services
-        </h2>
-        <p className="text-[18px] sm:text-[20px] md:text-[24px] text-gray-700 mt-4 text-center font-semibold md:text-left leading-relaxed">
-          LandFree offers a diverse array of expertly crafted services,
-          seamlessly merging creativity and technology to deliver solutions that
-          exceed expectations.
-        </p>
+        </motion.h2>
+        <motion.p
+          className="text-[18px] sm:text-[20px] md:text-[24px] text-Blue mt-4 text-center font-semibold md:text-left leading-relaxed"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={textVariants}
+        >
+          LandFree offers a diverse array of expertly crafted services, seamlessly merging creativity
+          and technology to deliver solutions that exceed expectations.
+        </motion.p>
 
         {/* Service Cards */}
-        <div className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          className="grid gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3"
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={gridVariants}
+        >
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className=" bg-slate-950 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-transform duration-300 transform hover:scale-105"
+              className="bg-slate-950 p-6 rounded-lg shadow-xl hover:shadow-2xl transition-transform duration-300 transform hover:scale-105"
+              variants={gridVariants}
             >
               <div className="flex items-center space-x-4 mb-4">
-                <BsFillBrushFill className="text-blue-500 text-3xl" />
-                <h3 className="text-[26px] font-bold text-blue-500">{service.title}</h3>
+                <BsFillBrushFill className="text-darkBlue text-3xl" />
+                <h3 className="text-[26px] font-bold text-darkBlue">{service.title}</h3>
               </div>
-              <p className="text-gray-400 mb-6 text-[27px] leading-relaxed">
-                {service.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
+              <p className="text-gray-400 mb-6 text-[27px] leading-relaxed">{service.description}</p>
+              <div className="flex flex-wrap border-t-2 border-b-2 p-3 gap-2 mb-6">
                 {service.tags.map((tag, i) => (
                   <span
                     key={i}
@@ -58,12 +85,12 @@ const Discover = () => {
                   </span>
                 ))}
               </div>
-              <button className="text-blue-500 text-sm w-full text-[24px] bg-gray-900 p-3 rounded-xl  hover:text-white flex items-center justify-center gap-2 font-medium">
+              <button className="text-Blue text-sm w-full text-[24px] bg-gray-900 p-3 rounded-xl  hover:text-white flex items-center justify-center gap-2 font-medium">
                 Book a Call <span>↗</span>
               </button>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
