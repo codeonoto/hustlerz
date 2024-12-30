@@ -9,15 +9,18 @@ const config: Config = {
   ],
   theme: {
   	extend: {
-		fontFamily: {
-			space: ["Space Grotesk", "serif"],
-		  },
+  		fontFamily: {
+  			space: [
+  				'Space Grotesk',
+  				'serif'
+  			]
+  		},
   		colors: {
-			Blue : "#66e0ff",
-			darkBlue: "#00ccff",
-			blue: {
-				DEFAULT : "#66e0ff, 100"
-			},
+  			Blue: '#66e0ff',
+  			darkBlue: '#00ccff',
+  			blue: {
+  				DEFAULT: '#66e0ff, 100'
+  			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -66,7 +69,9 @@ const config: Config = {
   		},
   		animation: {
   			ripple: 'ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite',
-  			grid: 'grid 15s linear infinite'
+  			grid: 'grid 15s linear infinite',
+  			marquee: 'marquee var(--duration) infinite linear',
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
   		},
   		keyframes: {
   			ripple: {
@@ -83,6 +88,22 @@ const config: Config = {
   				},
   				'100%': {
   					transform: 'translateY(0)'
+  				}
+  			},
+  			marquee: {
+  				from: {
+  					transform: 'translateX(0)'
+  				},
+  				to: {
+  					transform: 'translateX(calc(-100% - var(--gap)))'
+  				}
+  			},
+  			'marquee-vertical': {
+  				from: {
+  					transform: 'translateY(0)'
+  				},
+  				to: {
+  					transform: 'translateY(calc(-100% - var(--gap)))'
   				}
   			}
   		}

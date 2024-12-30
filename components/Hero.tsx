@@ -7,25 +7,71 @@ import logo2 from "@/app/image/logo2.png";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import IconCloud from "@/components/ui/icon-cloud";
+
+const slugs = [
+  "typescript",
+  "javascript",
+  "dart",
+  "java",
+  "react",
+  "flutter",
+  "android",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "express",
+  "nextdotjs",
+  "prisma",
+  "amazonaws",
+  "postgresql",
+  "firebase",
+  "nginx",
+  "vercel",
+  "testinglibrary",
+  "jest",
+  "cypress",
+  "docker",
+  "git",
+  "jira",
+  "github",
+  "gitlab",
+  "visualstudiocode",
+  "androidstudio",
+  "sonarqube",
+  "figma",
+];
 
 const Hero = () => {
   const headlineVariants = {
     hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.8, ease: "easeOut" } },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   const subheadingVariants = {
     hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.3, ease: "easeOut" } },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, delay: 0.3, ease: "easeOut" },
+    },
   };
 
   const buttonVariants = {
     hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.8, delay: 0.5, ease: "easeOut" } },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.8, delay: 0.5, ease: "easeOut" },
+    },
   };
 
   return (
-    <div className="relative h-[80vh] bg-black text-white">
+    <div className="relative min-h-screen  text-white">
       {/* Ripple and Retro Grid Background */}
       <div className="absolute inset-0 pointer-events-none">
         <RetroGrid />
@@ -37,6 +83,9 @@ const Hero = () => {
 
         {/* Logo Section */}
         <div className="flex items-center   space-x-2">
+          <div className="absolute z-10 md:left-[35%] left-[20%] ">
+            <IconCloud iconSlugs={slugs} />
+          </div>
           <Image
             src={logo2}
             alt="Logo"
