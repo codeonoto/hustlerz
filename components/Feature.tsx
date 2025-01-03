@@ -24,7 +24,7 @@ const Feature = () => {
             <h3 className="text-[28px] sm:text-[36px] md:text-[50px] font-extrabold text-darkBlue text-center md:text-left mb-6">
               What Sets Husterz Apart
             </h3>
-            <p className="text-[16px] sm:text-[18px] md:text-[20px] text-Blue mt-4 text-center md:text-left font-semibold leading-relaxed">
+            <p className="text-[16px] sm:text-[18px] md:text-[20px] text-white mt-4 text-center md:text-left font-semibold leading-relaxed">
               Explore the exceptional features that make Husterz your ultimate
               web development choice.
             </p>
@@ -117,7 +117,7 @@ const Feature = () => {
             <h3 className="text-[28px] sm:text-[36px] md:text-[50px] font-extrabold text-darkBlue text-center md:text-left mb-6">
               What’s Different in Our Process
             </h3>
-            <p className="text-[16px] sm:text-[18px] md:text-[20px] text-Blue mt-4 text-center md:text-left font-semibold leading-relaxed">
+            <p className="text-[16px] sm:text-[18px] md:text-[20px] text-white mt-4 text-center md:text-left font-semibold leading-relaxed">
               Explore the exceptional features that make LandFree your ultimate
               web development choice
             </p>

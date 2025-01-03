@@ -18,7 +18,7 @@ const Ripple = React.memo(function Ripple({
   return (
     <div
       className={cn(
-        "pointer-events-none select-none absolute inset-0 [mask-image:linear-gradient(to_bottom,white,transparent)]",
+        "pointer-events-none select-none absolute inset-0 ",
         className,
       )}
     >
@@ -42,7 +42,7 @@ const Ripple = React.memo(function Ripple({
                 borderStyle,
                 borderWidth: "1px",
                 borderColor: `hsl(var(--foreground), ${borderOpacity / 100})`,
-                top: "25%",
+                top: "30%",
                 left: "50%",
                 transform: "translate(-50%, -50%) scale(1)",
               } as CSSProperties

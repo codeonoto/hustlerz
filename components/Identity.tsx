@@ -67,7 +67,7 @@ const Identity = () => {
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-darkBlue mb-6 text-center sm:text-left">
             Discover Our Identity
           </h3>
-          <p className="text-lg sm:text-xl text-Blue font-semibold leading-relaxed mb-6 text-center sm:text-left">
+          <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed mb-6 text-center sm:text-left">
             At Hustlerz, we are more than just a web development agency. We are a passionate team of creative minds, tech enthusiasts, and strategic thinkers dedicated to helping businesses thrive in the digital realm.
           </p>
           <div className="flex justify-center sm:justify-start gap-4">

@@ -48,7 +48,7 @@ const Discover = () => {
           Discover Our Full Range of Services
         </motion.h2>
         <motion.p
-          className="text-[18px] sm:text-[20px] md:text-[24px] text-Blue mt-4 text-center font-semibold md:text-left leading-relaxed"
+          className="text-[18px] sm:text-[20px] md:text-[24px] text-white mt-4 text-center font-semibold md:text-left leading-relaxed"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={textVariants}

@@ -21,8 +21,8 @@ export const cloudProps: Omit<ICloud, "children"> = {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      width: "85%",
-      paddingTop: 20,
+      width: "100%",
+      paddingTop: 40,
     },
   },
   options: {
@@ -100,7 +100,7 @@ export default function IconCloud({
           imageArray.map((image, index) => {
             return (
               <a key={index} href="#" onClick={(e) => e.preventDefault()}>
-                <img height="42" width="42" alt="A globe" src={image} />
+                <img height="30" width="30" alt="A globe" src={image} />
               </a>
             );
           })}
