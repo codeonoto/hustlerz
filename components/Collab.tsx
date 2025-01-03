@@ -56,10 +56,10 @@ const Collab = () => {
   ];
 
   return (
-    <section className="min-h-screen w-full p-6 flex flex-col items-center justify-center">
-      <div className="max-w-7xl w-full">
+    <section className="min-h-screen w-full px-4 sm:px-6 lg:px-12 py-10 flex flex-col items-center justify-center bg-black">
+      <div className="max-w-[1200px] w-full">
         {/* Heading */}
-        <h3 className="text-[28px] sm:text-[36px] md:text-[44px] font-extrabold text-darkBlue text-center md:text-left  mb-6">
+        <h3 className="text-[36px] sm:text-[40px] md:text-[50px] font-extrabold text-darkBlue text-center md:text-left mb-6">
           Building Strong Collaborations
         </h3>
         <p className="text-[16px] sm:text-[18px] md:text-[20px] text-white mt-4 text-center font-medium md:text-left leading-relaxed">
@@ -69,15 +69,22 @@ const Collab = () => {
         </p>
 
         {/* Services */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-2 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gray-800 rounded-lg p-6 text-white flex flex-col "
+              className="bg-gray-800 rounded-lg p-6 text-white flex flex-col hover:shadow-xl transition-shadow duration-300"
             >
-              <h4 className="text-lg font-semibold mb-2 flex items-center gap-2"><span className="bg-gray-900 p-3 rounded-lg text-darkBlue">{service.icon}</span>{service.title}</h4>
-              <p className="text-sm mb-4">{service.description}</p>
-              <button className="text-Blue text-sm w-full text-[16px] bg-gray-900 p-3 rounded-xl  hover:text-white flex items-center justify-center gap-2 font-medium">
+              <h4 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                <span className="bg-gray-900 p-3 rounded-lg text-blue-500">
+                  {service.icon}
+                </span>
+                {service.title}
+              </h4>
+              <p className="text-sm text-gray-400 mb-4">
+                {service.description}
+              </p>
+              <button className="bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 rounded-lg flex items-center justify-center transition-colors duration-300">
                 Visit Website
               </button>
             </div>
