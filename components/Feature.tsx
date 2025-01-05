@@ -96,7 +96,7 @@ const Feature = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className="sm:flex hidden justify-center md:justify-end"
+            className="md:flex hidden justify-center md:justify-end"
           >
             <Image
               src={process}

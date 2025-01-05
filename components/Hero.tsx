@@ -92,11 +92,12 @@ const Hero = () => {
         </div>
 
         {/* Headline */}
-        <motion.h1
+        <div>
+          <motion.h1
           initial="hidden"
           animate="visible"
           variants={headlineVariants}
-          className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-tight"
+          className="text-4xl md:text-5xl lg:text-7xl mt-6 font-bold leading-tight tracking-tight"
         >
           Empowering Your Vision <br /> With Hustlerz.
         </motion.h1>
@@ -106,7 +107,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
           variants={subheadingVariants}
-          className="text-gray-400 max-w-xl md:max-w-2xl text-sm md:text-base"
+          className="text-gray-400  w-9/12 mt-6 mx-auto text-sm text-center md:text-base"
         >
           Empowering Your Vision, With Hustlerz conveys a commitment to helping
           ambitious individuals or teams turn their goals into reality.
@@ -120,11 +121,12 @@ const Hero = () => {
           className="flex flex-wrap justify-center space-x-4"
         >
           <Link href="/connect">
-            <button className="bg-white mt-10 text-black flex items-center justify-center gap-2 rounded-full px-6 py-3 transition-transform transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+            <button className="bg-white mt-8 text-black flex items-center justify-center gap-2 rounded-full px-6 py-3 transition-transform transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
               Let's Go <CgArrowRight />
             </button>
           </Link>
         </motion.div>
+        </div>
       </div>
     </div>
   );
