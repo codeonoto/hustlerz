@@ -56,7 +56,7 @@ const Collab = () => {
   ];
 
   return (
-    <section className="min-h-screen w-full px-4 sm:px-6 lg:px-12 py-10 flex flex-col items-center justify-center bg-black">
+    <section className="min-h-screen w-full px-4 sm:px-6 lg:px-12 py-10 flex flex-col items-center justify-center ">
       <div className="max-w-[1200px] w-full">
         {/* Heading */}
         <h3 className="text-[36px] sm:text-[40px] md:text-[50px] font-extrabold text-darkBlue text-center md:text-left mb-6">

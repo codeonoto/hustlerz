@@ -47,7 +47,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://hustlerz.com" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-space dark p-3 bg-black overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-space dark p-3 bg-gray overflow-x-hidden`}
       >
         <Navbar />
         {children}

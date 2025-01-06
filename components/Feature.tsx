@@ -6,11 +6,14 @@ import process from "@/app/image/process.svg";
 import Image from "next/image";
 import Advantage from "./Advantage";
 
+const sharedContainerStyles = "min-h-screen p-4 sm:p-6 md:p-10 mx-auto flex items-center justify-center";
+const sharedGridStyles = "grid grid-cols-1 md:grid-cols-2 gap-8 items-center";
+
 const Feature = () => {
   return (
     <>
-      <div className="min-h-screen w-11/12 p-4 sm:p-6 md:p-10 mx-auto flex items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className={sharedContainerStyles}>
+        <div className={sharedGridStyles}>
           {/* Text Content */}
           <motion.div
             initial={{ x: -100, opacity: 0 }}
@@ -31,34 +34,14 @@ const Feature = () => {
 
             {/* Feature Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-              <div className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg">
-                <div className="bg-darkBlue text-black p-2 rounded-full">
-                  <span className="text-lg font-bold">1</span>
+              {["Responsive and Mobile-First Design", "Seamless Content Management Systems", "Interactive Web Applications Solutions", "Ongoing Maintenance and Support"].map((item, index) => (
+                <div key={index} className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg">
+                  <div className="bg-darkBlue text-black p-2 rounded-full">
+                    <span className="text-lg font-bold">{index + 1}</span>
+                  </div>
+                  <p className="text-white">{item}</p>
                 </div>
-                <p className="text-white">Responsive and Mobile-First Design</p>
-              </div>
-              <div className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg">
-                <div className="bg-darkBlue text-black p-2 rounded-full">
-                  <span className="text-lg font-bold">2</span>
-                </div>
-                <p className="text-white">
-                  Seamless Content Management Systems
-                </p>
-              </div>
-              <div className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg">
-                <div className="bg-darkBlue text-black p-2 rounded-full">
-                  <span className="text-lg font-bold">3</span>
-                </div>
-                <p className="text-white">
-                  Interactive Web Applications Solutions
-                </p>
-              </div>
-              <div className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg">
-                <div className="bg-darkBlue text-black p-2 rounded-full">
-                  <span className="text-lg font-bold">4</span>
-                </div>
-                <p className="text-white">Ongoing Maintenance and Support</p>
-              </div>
+              ))}
             </div>
 
             <p className="text-gray-400 border-t-2 pt-2 mt-6">
@@ -88,8 +71,8 @@ const Feature = () => {
         </div>
       </div>
 
-      <div className="min-h-screen w-11/12 p-4 sm:p-6 md:p-10 mx-auto flex items-center justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div className={sharedContainerStyles}>
+        <div className={sharedGridStyles}>
           {/* Image */}
           <motion.div
             initial={{ y: -100, opacity: 0 }}
@@ -100,7 +83,7 @@ const Feature = () => {
           >
             <Image
               src={process}
-              alt="Feature"
+              alt="Process"
               width={600}
               height={600}
               className="max-w-full h-auto"
@@ -133,42 +116,22 @@ const Feature = () => {
 
             {/* Feature Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-              <div className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg">
-                <div className="bg-darkBlue text-black p-2 rounded-full">
-                  <span className="text-lg font-bold">1</span>
+              {[
+                { title: "Discovery Phase", description: "Understand client goals and project requirements" },
+                { title: "Planning & Strategy", description: "Develop a comprehensive roadmap and project plan" },
+                { title: "Design Prototyping", description: "Create visual mockups for the client approval" },
+                { title: "Client Collaboration", description: "Regular communication and feedback loops" },
+              ].map((item, index) => (
+                <div key={index} className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg">
+                  <div className="bg-darkBlue text-black p-2 rounded-full">
+                    <span className="text-lg font-bold">{index + 1}</span>
+                  </div>
+                  <div>
+                    <p className="text-white font-bold">{item.title}</p>
+                    <p>{item.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-white font-bold">Discovery Phase</p>
-                  <p>Understand client goals and project requirements</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg">
-                <div className="bg-darkBlue text-black p-2 rounded-full">
-                  <span className="text-lg font-bold">2</span>
-                </div>
-                <div>
-                  <p className="text-white font-bold">Planning & Strategy</p>
-                  <p>Develop a comprehensive roadmap and project plan</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg">
-                <div className="bg-darkBlue text-black p-2 rounded-full">
-                  <span className="text-lg font-bold">3</span>
-                </div>
-                <div>
-                  <p className="text-white font-bold">Design Prototyping</p>
-                  <p>Create visual mockups for the client approval</p>
-                </div>
-              </div>
-              <div className="flex items-center space-x-4 bg-gray-800 p-4 rounded-lg">
-                <div className="bg-darkBlue text-black p-2 rounded-full">
-                  <span className="text-lg font-bold">4</span>
-                </div>
-                <div>
-                  <p className="text-white font-bold">Client Collaboration</p>
-                  <p>Regular communication and feedback loops</p>
-                </div>
-              </div>
+              ))}
             </div>
           </motion.div>
         </div>

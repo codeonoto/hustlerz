@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-black text-white px-6 py-4 shadow-md">
+      <nav className=" text-white px-6 py-4 shadow-md">
         <div className="container w-11/12 mx-auto flex items-center justify-around">
           {/* Logo */}
           <div className="flex items-center space-x-2">
@@ -58,23 +58,33 @@ const Navbar = () => {
           <ul className="space-y-6 text-md font-semibold">
             <li className="hover:text-blue-400 flex items-center space-x-2">
               <HouseIcon />
-              <Link href="/" role="menuitem">Home</Link>
+              <Link href="/" role="menuitem">
+                Home
+              </Link>
             </li>
             <li className="hover:text-blue-400 flex items-center space-x-2">
               <Library />
-              <Link href="/about" role="menuitem">About</Link>
+              <Link href="/about" role="menuitem">
+                About
+              </Link>
             </li>
             <li className="hover:text-blue-400 flex items-center space-x-2">
               <NetworkIcon />
-              <Link href="/services" role="menuitem">Services</Link>
+              <Link href="/services" role="menuitem">
+                Services
+              </Link>
             </li>
             <li className="hover:text-blue-400 flex items-center space-x-2">
               <Workflow />
-              <Link href="/works" role="menuitem">Works</Link>
+              <Link href="/works" role="menuitem">
+                Works
+              </Link>
             </li>
             <li className="hover:text-blue-400 flex items-center space-x-2">
               <HandCoins />
-              <Link href="/pricing" role="menuitem">Pricing</Link>
+              <Link href="/pricing" role="menuitem">
+                Pricing
+              </Link>
             </li>
             <li className="hover:text-blue-400">
               <Link href="/contact" role="menuitem">
@@ -102,13 +112,13 @@ function NavbarDemo({ className }: { className?: string }) {
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="About"></MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Services">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/">Design Services</HoveredLink>
-            <HoveredLink href="/">Engineering Services</HoveredLink>
-            <HoveredLink href="/">Cloud Services</HoveredLink>
-          </div>
-        </MenuItem>
+        <Link href="/services">
+          <MenuItem
+            setActive={setActive}
+            active={active}
+            item="Services"
+          ></MenuItem>
+        </Link>
         <MenuItem setActive={setActive} active={active} item="Work">
           <div className="flex flex-col space-y-4 text-sm">
             {/* Add Product Items here */}

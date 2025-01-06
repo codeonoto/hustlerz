@@ -16,8 +16,8 @@ const reviews = [
   { name: "Meta", img: <BsMeta className="text-4xl" /> },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
+const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
 
 const ReviewCard = memo(({ img, name }: { img: React.ReactNode; name: string }) => (
   <figure
@@ -34,6 +34,13 @@ const ReviewCard = memo(({ img, name }: { img: React.ReactNode; name: string }) 
     </div>
   </figure>
 ));
+
+const achievements = [
+  { value: "2024", label: "Year Founded" },
+  { value: "10+", label: "Projects" },
+  { value: "50+", label: "Clients Served" },
+  { value: "200+", label: "Team Members" },
+];
 
 const Identity = () => {
   return (
@@ -79,36 +86,30 @@ const Identity = () => {
             </button>
           </div>
 
-           {/* Clients Section */}
-      <div className="mt-12">
-        <p className="text-center text-sm font-medium bg-slate-900 text-white px-4 py-1 rounded-full w-fit mx-auto uppercase">
-          Our Clients
-        </p>
-        <div className="mt-6 rounded-lg">
-          <Marquee pauseOnHover className="[--duration:20s]">
-            {firstRow.map((review) => (
-              <ReviewCard key={review.name} {...review} />
-            ))}
-          </Marquee>
-          <Marquee reverse pauseOnHover className="[--duration:20s]">
-            {secondRow.map((review) => (
-              <ReviewCard key={review.name} {...review} />
-            ))}
-          </Marquee>
-        </div>
-      </div>
+          {/* Clients Section */}
+          <div className="mt-12">
+            <p className="text-center text-sm font-medium bg-slate-900 text-white px-4 py-1 rounded-full w-fit mx-auto uppercase">
+              Our Clients
+            </p>
+            <div className="mt-6 rounded-lg">
+              <Marquee pauseOnHover className="[--duration:20s]">
+                {firstRow.map((review) => (
+                  <ReviewCard key={review.name} {...review} />
+                ))}
+              </Marquee>
+              <Marquee reverse pauseOnHover className="[--duration:20s]">
+                {secondRow.map((review) => (
+                  <ReviewCard key={review.name} {...review} />
+                ))}
+              </Marquee>
+            </div>
+          </div>
         </motion.div>
       </div>
 
-
       {/* Achievements Section */}
       <div className="mt-16 flex flex-wrap justify-center gap-8">
-        {[
-          { value: "2024", label: "Year Founded" },
-          { value: "10+", label: "Projects" },
-          { value: "50+", label: "Clients Served" },
-          { value: "200+", label: "Team Members" },
-        ].map((achievement, index) => (
+        {achievements.map((achievement, index) => (
           <div
             key={index}
             className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center text-white w-40"
