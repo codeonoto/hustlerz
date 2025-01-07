@@ -1,39 +1,43 @@
 "use client";
+
+import { ArrowUpRight } from "lucide-react";
 import React, { forwardRef, useRef } from "react";
-import { ArrowUpRight } from 'lucide-react';
+ 
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 import OurServices from "./_components/OurServices";
 
 const Services = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center">
-      <div className="container  text-center md:text-left flex flex-col md:flex-row items-center p-6 justify-between space-y-6 md:space-y-0">
+    <div className="py-16 flex flex-col items-center justify-center">
+      <div className="container mx-auto px-4 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Text Section */}
-        <div className="w-full space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">
-            We Are The <span className="text-darkBlue">Problem Solver</span> of Digital Age
+        <div className="max-w-xl space-y-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white">
+            We Are The <span className="text-darkBlue">Problem Solver</span> of the Digital Age
           </h1>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-400 leading-relaxed">
             At the forefront of digital innovation, our expert team solves complex challenges in app development, cloud infrastructure, data science, IoT, and cybersecurity. 
             We craft tailored solutions that transform hurdles into opportunities for business growth and success.
           </p>
-          <button className="inline-flex items-center px-6 py-3 bg-darkBlue text-black  font-medium rounded-lg hover:bg-white transition duration-300">
+          <button className="inline-flex items-center px-6 py-3 bg-darkBlue text-black font-medium rounded-lg hover:bg-white hover:text-darkBlue transition duration-300">
             Let's Work Together
             <ArrowUpRight className="ml-2 w-5 h-5" />
           </button>
         </div>
 
         {/* Flowchart Section */}
-        <AnimatedBeamDemo />
+        <div className="flex-shrink-0 w-full md:w-1/2">
+          <AnimatedBeamDemo />
+        </div>
       </div>
       <OurServices/>
     </div>
   );
+
 };
 
 export default Services;
-
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -66,7 +70,7 @@ export function AnimatedBeamDemo() {
  
   return (
     <div
-      className="relative flex h-[500px] w-full items-center justify-center overflow-hidden  p-6 md:shadow-xl"
+      className="relative flex h-[500px] w-full items-center justify-center overflow-hidden  p-10 md:shadow-xl"
       ref={containerRef}
     >
       <div className="flex size-full flex-col max-w-lg max-h-[200px] items-stretch justify-between gap-10">

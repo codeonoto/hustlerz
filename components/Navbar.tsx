@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className=" text-white px-6 py-4 shadow-md">
+      <nav className=" text-white px-6 py-4 ">
         <div className="container w-11/12 mx-auto flex items-center justify-around">
           {/* Logo */}
           <div className="flex items-center space-x-2">

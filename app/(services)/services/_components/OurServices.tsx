@@ -1,71 +1,75 @@
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"; // Import ScrollToPlugin
+import Link from "next/link";
+
+// Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 interface Section {
   id: string;
   title: string;
+  link: string;
 }
 
 const sections: Section[] = [
-  { id: "app-development", title: "App Development" },
-  { id: "data-science", title: "Data Science" },
-  { id: "web-development", title: "Web Developement" },
-  { id: "ui-ux", title: "UI/UX" },
-
+  { id: "app-development", title: "App Development", link: "services/app-developement" },
+  { id: "data-science", title: "Data Science" ,link: "services/data-science"},
+  { id: "Web Developement", title: "Web Developement" ,link: "services/web-development"},
+  { id: "ui-ux", title: "UI/UX",link: "services/uiux" },
 ];
 
 const OurServices = () => {
   const [activeSection, setActiveSection] = useState<string>("app-development");
-  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
-  const { scrollY } = useViewportScroll();
+  const sectionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});  // Use HTMLDivElement type
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.6, // 60% of the section needs to be visible
-    };
+    const sectionElements = Object.values(sectionRefs.current);
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+    // GSAP ScrollTrigger setup
+    if (containerRef.current) {
+      sectionElements.forEach((section) => {
+        if (section) {
+          ScrollTrigger.create({
+            trigger: section,
+            start: "top center", // When the section's top reaches the center of the viewport
+            end: "bottom center",
+            onEnter: () => setActiveSection(section.id),
+            onEnterBack: () => setActiveSection(section.id),
+          });
         }
       });
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    Object.values(sectionRefs.current).forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => observer.disconnect();
   }, []);
 
   const handleScrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      gsap.to(window, { scrollTo: { y: element.offsetTop, autoKill: false }, duration: 0.8 });
       setActiveSection(id);
     }
   };
 
-  // Parallax effect for the background
-  const parallaxBackground = useTransform(scrollY, [0, 1000], ["0%", "50%"]);
-
   return (
     <div className="relative w-full h-screen flex">
-      {/* Sidebar */}
+      {/* Sidebar (Fixed) */}
       <motion.div
-        className="sticky top-0 h-screen w-1/4 p-4  text-white shadow-md"
+        className="sticky top-0 h-screen w-1/4 p-4  text-white shadow-md z-10"
         initial={{ x: -100 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5 }}
       >
         <ul className="space-y-4">
           {sections.map((section) => (
-            <li
+           <Link href={section.link}>
+             <li
               key={section.id}
               onClick={() => handleScrollToSection(section.id)}
               className={`cursor-pointer p-2 rounded-md ${
@@ -76,21 +80,22 @@ const OurServices = () => {
             >
               {section.title}
             </li>
+           </Link>
           ))}
         </ul>
       </motion.div>
 
       {/* Scrollable Content */}
-      <div className="flex-1 overflow-y-auto over space-y-16">
+      <div className=" w-full overflow-y-scroll">
         {sections.map((section, index) => (
           <section
             id={section.id}
             key={section.id}
-            ref={(el) => (sectionRefs.current[section.id] = el)}
-            className={`h-screen flex items-center justify-center p-8 ${
+            ref={(el) => (sectionRefs.current[section.id] = el)} // Ref callback
+            className={`h-screen flex items-center justify-center ${
               index % 2 === 0
-                ? "bg-white text-black"
-                : "bg-gray-100 text-gray-900"
+                ? "bg-gray-100 text-black"
+                : "bg-white text-gray-900"
             }`}
           >
             <motion.div
