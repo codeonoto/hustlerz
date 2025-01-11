@@ -1,10 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import image from "@/app/image/appdevelopement.svg";
+import Module from "./_components/Module";
+import Tech from "./_components/Tech";
+import Process from "./_components/Process";
+import Banner from "./_components/Banner";
 
 const AppDevelopment = () => {
   return (
-    <div className=" flex items-center justify-center flex-col">
+    <div className=" flex items-center h-full justify-center flex-col">
       <div className=" flex items-center justify-center bg-gray-950 w-full">
         <div className="container flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-12 lg:px-20 space-y-8 md:space-y-0">
           {/* Text Section */}
@@ -35,9 +39,41 @@ const AppDevelopment = () => {
         </div>
       </div>
       {/* App development service */}
-    <div>
-        <h1>Our App Development Services</h1>
-    </div>
+      <div className="text-center w-11/12 flex mt-12 flex-col items-center justify-center">
+        <h1 className="text-[3rem] font-bold">Our App Development Services</h1>
+        <p>
+          Elevate your business with our specialized app development services.
+          We are dedicated to building scalable, secure, and high-performance
+          applications that fuel your growth and enhance your success.
+        </p>
+        <Module />
+      </div>
+
+      <div className="w-11/12 flex mt-12 flex-col items-start justify-center">
+        <h1 className="text-[3rem] font-bold text-start">
+          Technologies We Use
+        </h1>
+        <p className="text-start">
+          Discover the cutting-edge tools and technologies that power our
+          innovative solutions.
+        </p>
+        <Tech />
+      </div>
+
+      <div className="w-11/12 flex mt-12 flex-col items-start justify-center">
+        <h1 className="text-[3rem] font-bold text-start">
+          Our App Development Process
+        </h1>
+        <p className="text-start">
+          We follow a comprehensive approach to app development, starting from
+          research and strategy to deployment and post-launch support. Each
+          phase is designed to ensure high-quality apps that meet your business
+          goals..
+        </p>
+        <Process />
+      </div>
+
+      <Banner/>
     </div>
   );
 };

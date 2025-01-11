@@ -31,6 +31,7 @@ const Services = () => {
           <AnimatedBeamDemo />
         </div>
       </div>
+      <h1 className="font-bold text-[3rem]">Our Services.</h1>
       <OurServices/>
     </div>
   );
