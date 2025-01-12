@@ -1,3 +1,4 @@
+"use client "
 import { motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
@@ -29,8 +30,16 @@ const sections: Section[] = [
     title: "App Developement",
     link: "services/app-developement",
     description:
-      "We create innovative mobile and web applications that drive user engagement, growth, and profitability.",
-    tech: ["React Native", "Mobile Testing"],
+      "Unlock the potential of your business with our tailored app development solutions. From innovative mobile apps to seamless user experiences, we create applications that engage users and drive growth. Let us transform your ideas into reality.",
+    tech: [
+      "React Native",
+      "Mobile Testing",
+      "Cross-Platform Development",
+      "Hybrid Apps",
+      "Mobile App Testing",
+      "Agile Development",
+      "Mobile App",
+    ],
   },
   {
     id: "data-science",
@@ -38,8 +47,16 @@ const sections: Section[] = [
     title: "Data Science",
     link: "services/data-science",
     description:
-      "Leverage our data science expertise to extract valuable insights from your data and make data-driven decisions.",
-    tech: ["Python", "Machine Learning", "Data Visualization"],
+      "Unlock the potential of your business with our comprehensive data science solutions. From advanced analytics to predictive modeling, we empower organizations to make data-driven decisions that enhance performance and drive innovation. Let us transform your data into actionable insights.",
+    tech: [
+      "Python",
+      "Machine Learning",
+      "Data Visualization",
+      "Predictive Analytics",
+      "Machine Learning Solutions",
+      "Big Data Solutions",
+      "Data Warehousing & Management",
+    ],
   },
   {
     id: "web-development",
@@ -47,8 +64,18 @@ const sections: Section[] = [
     title: "Web Development",
     link: "services/web-development",
     description:
-      "Build high-performance, user-friendly websites that represent your brand and achieve your business goals.",
-    tech: ["React", "Node.js", "MongoDB", "Express.js"],
+      "Design and develop high-performance, visually stunning, and user-friendly websites that not only reflect the unique identity of your brand but also provide seamless navigation and functionality. Our web development solutions ensure optimal performance, faster load times, and mobile responsiveness, creating an exceptional online experience for your audience. By combining cutting-edge technologies and creative design, we help you establish a strong digital presence that aligns with your business objectives and drives measurable growth.",
+    tech: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "Next.js",
+      "Javascript",
+      "Typescript",
+      "Sql",
+      "FireBase",
+    ],
   },
   {
     id: "ui-ux",
@@ -56,8 +83,17 @@ const sections: Section[] = [
     title: "UI/UX",
     link: "services/uiux",
     description:
-      "Craft exceptional user experiences with our UI/UX design services, ensuring usability, accessibility, and visual appeal.",
-    tech: ["Figma", "Sketch", "Adobe XD"],
+      "Transform your digital presence with our expert UI/UX design services. We create intuitive and engaging interfaces that not only enhance user satisfaction but also drive conversion. Let us help you craft seamless user journeys that captivate and retain your audience.",
+    tech: [
+      "Figma",
+      "Sketch",
+      "Adobe XD",
+      "User Research & Personas",
+      "Wireframing & Prototyping",
+      "Visual Design & Branding",
+      "Usability Testing & Feedback",
+      "Responsive & Adoptive Design",
+    ],
   },
 ];
 
@@ -120,7 +156,7 @@ const OurServices = () => {
     <div className="relative w-full flex flex-col lg:flex-row">
       {/* Sidebar */}
       <motion.div
-        className="sticky top-0 lg:h-screen w-full lg:w-1/4 text-white shadow-md z-10 flex flex-row lg:flex-col border-r-2 border-darkBlue justify-between p-6"
+        className="sticky top-0 lg:h-screen w-full lg:w-1/4 text-white shadow-md z-10 flex flex-row lg:flex-col border-r-2 bg-gray border-darkBlue justify-between p-6"
         initial={{ x: -100 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5 }}
@@ -130,10 +166,10 @@ const OurServices = () => {
             <li
               key={section.id}
               onClick={() => handleScrollToSection(section.id)}
-              className={`cursor-pointer p-3 rounded-md transition-all duration-300 ${
+              className={`cursor-pointer p-3 rounded-md transition-all  duration-300 ${
                 activeSection === section.id
-                  ? "bg-darkBlue text-white scale-105"
-                  : "hover:bg-blue-600 text-white hover:scale-105 hover:text-black"
+                  ? "bg-darkBlue text-black font-semibold scale-105"
+                  : "hover:bg-darkBlue text-white hover:scale-105 hover:text-black"
               }`}
             >
               {section.title}
@@ -149,16 +185,19 @@ const OurServices = () => {
             id={section.id}
             key={section.id}
             ref={(el) => (sectionRefs.current[section.id] = el)}
-            className={`relative h-[120vh] flex items-center px-4 sm:px-8 ${
+            className={`relative h-[100vh] flex items-center px-4 p-6 sm:px-8 ${
               index % 2 === 0 ? "text-black bg-gray-950  " : " "
             } rounded-lg shadow-lg overflow-hidden`}
           >
             <div
               ref={(el) => (parallaxRefs.current[index] = el!)}
               className="absolute inset-0 flex items-center justify-center"
-
             >
-              <Image src={section.img} alt="" className="w-96 h-96 object-cover" />
+              <Image
+                src={section.img}
+                alt=""
+                className="w-96 h-96 object-cover"
+              />
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -172,17 +211,23 @@ const OurServices = () => {
                 <p className="text-base sm:text-lg lg:text-xl max-w-2xl mx-auto mb-6">
                   {section.description}
                 </p>
-                <div className="text-sm text-gray-300">
-                  <strong>Technologies:</strong> {section.tech.join(", ")}
+                <div className="flex flex-wrap gap-3">
+                  {section.tech.map((techItem) => (
+                    <span
+                      key={techItem}
+                      className="px-4 py-2 bg-darkBlue border border-gray-300 rounded-full text-sm text-black font-semibold transition"
+                    >
+                      {techItem}
+                    </span>
+                  ))}
                 </div>
 
                 <Link href={section.link}>
-                <button className="inline-flex items-center px-6 py-3 bg-white text-gray-950 font-medium rounded-lg shadow-lg hover:bg-gray-800 hover:text-white transition duration-300 ease-in-out">
-                  Know More
-            </button>
+                  <button className="inline-flex mt-6 items-center px-6 py-3 bg-white text-gray-950 font-medium rounded-lg shadow-lg hover:bg-gray-800 hover:text-white transition duration-300 ease-in-out">
+                    Know More
+                  </button>
                 </Link>
               </motion.div>
-
             </div>
           </section>
         ))}

@@ -3,6 +3,10 @@
 import Image from "next/image";
 import React from "react";
 import image from "@/app/image/appdevelopement.svg";
+import Module from "./_components/Module";
+import Tech from "./_components/Tech";
+import Process from "./_components/Process";
+import Banner from "../app-developement/_components/Banner";
 
 const WebDevelopement = () => {
   return (
@@ -37,9 +41,41 @@ const WebDevelopement = () => {
         </div>
       </div>
       {/* Web Developement service */}
-    <div>
-        <h1>Our Web Developement Services</h1>
-    </div>
+      <div className="text-center w-11/12 flex mt-12 flex-col items-center justify-center">
+        <h1 className="text-[3rem] font-bold">Our Web Development Services</h1>
+        <p>
+          Elevate your business with our specialized app development services.
+          We are dedicated to building scalable, secure, and high-performance
+          applications that fuel your growth and enhance your success.
+        </p>
+        <Module />
+      </div>
+
+      <div className="w-11/12 flex mt-12 flex-col items-start justify-center">
+        <h1 className="text-[3rem] font-bold text-start">
+          Technologies We Use
+        </h1>
+        <p className="text-start">
+          Discover the cutting-edge tools and technologies that power our
+          innovative solutions.
+        </p>
+        <Tech />
+      </div>
+
+      <div className="w-11/12 flex mt-12 flex-col items-start justify-center">
+        <h1 className="text-[3rem] font-bold text-start">
+          Our Web Development Process
+        </h1>
+        <p className="text-start">
+          We follow a comprehensive approach to app development, starting from
+          research and strategy to deployment and post-launch support. Each
+          phase is designed to ensure high-quality apps that meet your business
+          goals..
+        </p>
+        <Process />
+      </div>
+
+      <Banner/>
     </div>
   );
 };

@@ -96,7 +96,7 @@ const Module = () => {
               {sections.map((item) => (
                 <li
                   key={item.id}
-                  className={`cursor-pointer py-2 text-start transition duration-300 ease-in-out hover:bg-blue-500 p-3 rounded-md  hover:text-white ${selectedSectionId === item.id ? ' text-black bg-white p-3 rounded-md font-semibold' : ''}`}
+                  className={`cursor-pointer py-2 text-start transition duration-300 ease-in-out hover:bg-blue-500 p-3 rounded-md hover:text-white ${selectedSectionId === item.id ? ' text-black bg-white p-3 rounded-md font-semibold' : ''}`}
                   onClick={() => setSelectedSectionId(item.id)}
                 >
                   {item.title}

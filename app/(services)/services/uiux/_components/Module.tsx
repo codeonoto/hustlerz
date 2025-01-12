@@ -19,86 +19,86 @@ interface Section {
 const sections: Section[] = [
   {
     id: 1,
-    title: "Data Strategy & Consulting",
+    title: "UI/UX Research Strategy",
     description:
-      "Our team helps you define a data-driven strategy to align with your business objectives.",
+      "Understanding your users and business needs is the foundation of our process. We dive deep into user behavior and market trends to create designs that resonate with your target audience.",
     logo: <CodeXml />,
     points: [
-      "Data Audit & Assessment: Evaluate your existing data landscape to identify gaps and opportunities.",
-      "Data Strategy Development: Design a comprehensive roadmap for data initiatives that fuel your growth.",
-      "Technology & Tools Selection: Guide you in choosing the right tools, platforms, and technologies to fit your specific data needs.",
+      "      User Research: We conduct surveys, interviews, and usability testing to understand user needs and pain points.",
+
+      "Competitor Analysis: Gain insights into the competition to identify opportunities for differentiation.",
+
+      "Personas & Scenarios: Develop user personas and scenarios to guide the design process.",
     ],
   },
   {
     id: 2,
-    title: "Data Collection & Integration",
+    title: "User Interface (UI) Design",
     description:
-      "Our web app development services focus on creating fast, responsive, and secure web applications that offer a seamless user experience on all devices.",
+      "Our UI design services focus on creating visually appealing, intuitive interfaces that provide seamless interaction with your product.",
     logo: <PanelsTopLeft />,
     points: [
-      "Data Acquisition: Leverage APIs, web scraping, and database connections to gather structured and unstructured data.",
+      "      Wireframing: Develop wireframes that map out the structure of each screen.",
 
-      "ETL Processes: Extract, Transform, and Load (ETL) data for better accessibility and usability.",
+      "      Prototyping: Create interactive prototypes to test and refine user flows.",
 
-      "Data Warehousing: Build centralized repositories to store and manage your data securely.",
+      "      Visual Design: Implement clean, modern design aesthetics to enhance usability and engagement.",
     ],
   },
   {
     id: 3,
-    title: "Data Analytics & Business Intelligence",
+    title: "User Experience (UX) Design",
     description:
-      "We specialize in developing enterprise-grade applications that streamline operations, enhance productivity, and drive business growth.",
+      "Delivering an exceptional experience is key to user retention. We design solutions that keep the user's journey smooth, simple, and delightful.",
     logo: <Building2 />,
     points: [
-      "   Descriptive Analytics: Understand past data trends and patterns to guide future decisions.",
+      "      Information Architecture: Structuring content effectively for easy navigation.",
 
-      "Diagnostic Analytics: Discover the causes of specific trends and behaviors in your data.",
+      "User Flows & Journey Mapping: Define and optimize the journey users take from start to finish.",
 
-      "Predictive Analytics: Use machine learning and statistical models to predict future outcomes and trends.",
-
-      "Business Intelligence (BI): Implement BI tools like Power BI and Tableau to visualize data and extract meaningful insights.",
+      "Usability Testing: Continuous testing and feedback integration to refine designs.",
     ],
   },
   {
     id: 4,
-    title: "Machine Learning & Artificial Intelligence (AI)",
+    title: "Interactive Design",
     description:
-      "We provide end-to-end e-commerce app development services, enabling you to deliver a seamless shopping experience to your customers.",
+      "Create engaging and interactive elements that respond intuitively to user actions, delivering an interactive experience that enhances the overall user journey.",
     logo: <ShoppingBag />,
     points: [
-      " Supervised Learning: Build models to predict specific outcomes based on labeled data.",
+      "      Micro-interactions: Small, responsive animations that guide users and enhance usability.",
 
-      "Unsupervised Learning: Detect hidden patterns and clusters in unlabeled data.",
+      "Motion Design: Use animations and transitions to enrich the experience without overwhelming the user.",
 
-      "Natural Language Processing (NLP): Extract insights from unstructured text data for applications such as sentiment analysis.",
+      "Responsive Design: Ensure designs are adaptable and functional across all devices and screen sizes.",
     ],
   },
   {
     id: 5,
-    title: "Data Visualization & Reporting",
+    title: "Mobile App Design",
     description:
-      "Our app maintenance services are designed to keep your app consistently updated, secure, and performing at its best, ensuring a seamless experience for your users over time.",
+      "Our team specializes in designing intuitive and high-performance mobile app experiences.",
     logo: <Wrench />,
     points: [
-      "  Custom Dashboards: Design intuitive dashboards that display real-time data and key performance indicators (KPIs).",
+      "Platform-Specific Design: Tailored designs for iOS and Android to match platform guidelines.",
 
-      "Interactive Reports: Build interactive reports with dynamic elements for deep data exploration.",
+      "App Navigation Design: Simple and intuitive app navigation flows for a frictionless experience.",
 
-      "Data Storytelling: Transform raw data into compelling narratives using visualizations that communicate insights clearly.",
+      "Touch Gestures: Optimize designs for mobile interactions like swiping, tapping, and pinching.",
     ],
   },
   {
     id: 6,
-    title: "Advanced Analytics & Data Modeling",
+    title: "Website Design",
     description:
-      "Our app maintenance services are designed to keep your app consistently updated, secure, and performing at its best, ensuring a seamless experience for your users over time.",
+      "From concept to launch, we deliver fully responsive, user-friendly websites that attract and retain users.",
     logo: <Wrench />,
     points: [
-      "Regression & Classification Models: Build models to predict trends, customer behavior, and market shifts.",
+      "Responsive Web Design: Create designs that perform flawlessly on any device or browser.",
 
-      "Time Series Analysis: Analyze time-dependent data to forecast future events.",
+      "Conversion Optimization: Focus on designs that convert visitors into customers.",
 
-      "Clustering & Segmentation: Group customers, products, or behaviors for targeted insights and strategies.",
+      "Performance Optimization: Enhance site loading speed and overall user experience.",
     ],
   },
 ];

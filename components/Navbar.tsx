@@ -23,9 +23,11 @@ const Navbar = () => {
       <nav className=" text-white px-6 py-4 ">
         <div className="container w-11/12 mx-auto flex items-center justify-around">
           {/* Logo */}
+          <Link href={"/"}>
           <div className="flex items-center space-x-2">
             <Image src={logo} alt="Logo" className="h-12 w-auto" />
           </div>
+          </Link>
 
           {/* Desktop Navigation Links */}
           <div className="hidden lg:flex items-center space-x-8 fixed top-0 left-1/2 transform -translate-x-1/2 z-50 px-4 py-2 rounded-lg shadow-lg mt-2">
@@ -103,21 +105,24 @@ function NavbarDemo({ className }: { className?: string }) {
   return (
     <div className={cn("flex space-x-6", className)}>
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Home">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Web Development</HoveredLink>
-            <HoveredLink href="/interface-design">Interface Design</HoveredLink>
-            <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
-            <HoveredLink href="/branding">Branding</HoveredLink>
-          </div>
+        <Link href={"/"}>
+        <MenuItem setActive={setActive}  active={active} item="Home">
         </MenuItem>
+        </Link>
         <MenuItem setActive={setActive} active={active} item="About"></MenuItem>
         <Link href="/services">
           <MenuItem
             setActive={setActive}
             active={active}
             item="Services"
-          ></MenuItem>
+          >
+            <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/services/app-developement">App Developement</HoveredLink>
+            <HoveredLink href="/services/web-development">Website Developement</HoveredLink>
+            <HoveredLink href="/services/data-science">Data Science</HoveredLink>
+            <HoveredLink href="/services/uiux">UI/UX</HoveredLink>
+          </div>
+          </MenuItem>
         </Link>
         <MenuItem setActive={setActive} active={active} item="Work">
           <div className="flex flex-col space-y-4 text-sm">

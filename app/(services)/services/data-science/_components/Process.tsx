@@ -15,44 +15,44 @@ export default Process;
 export const projects = [
   {
     id: 1,
-    title: "Discovery & Requirement Gathering",
+    title: "Discovery & Requirement Analysis",
     description:
-      "Our process begins with understanding your business goals, target audience, and project requirements. In this phase, we conduct in-depth research into the market, user needs, and competitor landscape to establish a solid foundation for a successful project.",
+      "We begin by understanding your business challenges, objectives, and data environment. This allows us to define the best approach for your unique needs.",
     link: "",
   },
   {
     id: 2,
-    title: "App Strategy & Planning",
+    title: "Data Preparation & Cleansing",
     description:
-      "Once the requirements are clear, we create a detailed app development strategy. This includes selecting the right technology stack, defining user flows, and mapping out the key features of the app.",
+      "We clean, transform, and prepare your data, ensuring its quality and integrity. This step ensures that the data is usable for analytics and modeling.",
     link: "",
   },
   {
     id: 3,
-    title: "Development & Integration",
+    title: "Model Development",
     description:
-      "Our developers turn designs into fully functional apps, integrating all necessary third-party services and APIs. We use agile development practices to ensure flexibility and quick iteration.",
+      "We use statistical models, machine learning algorithms, and data mining techniques to develop models that predict outcomes and offer actionable insights.",
     link: "",
   },
   {
     id: 4,
-    title: "Testing & Quality Assurance",
+    title: "Validation & Testing",
     description:
-      "Before launch, we perform rigorous testing to guarantee seamless performance. Our quality assurance team meticulously evaluates functionality, usability, security, and cross-device compatibility, ensuring your app meets the highest standards.",
+      "Before deployment, our models undergo rigorous testing and validation to ensure accuracy and reliability. We make adjustments based on real-world data and feedback.",
     link: "",
   },
   {
     id: 5,
-    title: "Deployment & Launch",
+    title: "Deployment & Monitoring",
     description:
-      "Once the app passes all testing phases, we deploy it to the relevant platforms (App Store, Google Play, or web). We also offer post-launch support to ensure a smooth transition.",
+      "Once validated, we deploy the models and implement dashboards or reporting tools. We also continuously monitor model performance to ensure that it meets business objectives.",
     link: "",
   },
   {
     id: 6,
-    title: "Post-Launch Support & Maintenance",
+    title: "Optimization & Continuous Improvement",
     description:
-      "Once your app is live, our commitment continues with proactive monitoring and ongoing maintenance. We address bug fixes, implement updates, optimize performance, and introduce feature enhancements, all informed by user feedback to ensure your app evolves smoothly.",
+      "Data science is an ongoing process. We provide continuous updates and model refinements to ensure that your business stays ahead of the competition.",
     link: "",
   },
 ];

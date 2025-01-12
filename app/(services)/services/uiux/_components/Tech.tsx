@@ -4,28 +4,33 @@ import React, { useState } from "react";
 import {
   FaAws,
   FaCss3,
-  FaFileContract,
+  FaFigma,
   FaHtml5,
+  FaInvision,
   FaNode,
-  FaPython,
   FaReact,
+  FaSketch,
+  FaSlack,
   FaSwift,
+  FaTrello,
+  FaVuejs,
 } from "react-icons/fa";
-import { FaFlutter, FaR } from "react-icons/fa6";
-import {
-  SiGooglecloud,
-  SiKeras,
-  SiPytorch,
-  SiScikitlearn,
-  SiTensorflow,
-} from "react-icons/si";
-import { GrMysql } from "react-icons/gr";
+import { FaA, FaFlutter } from "react-icons/fa6";
+import { TbBrandKotlin } from "react-icons/tb";
 import { AiOutlineJavaScript } from "react-icons/ai";
 import { DiDjango, DiMysql, DiHeroku } from "react-icons/di";
-import { SiSpring, SiExpress, SiMongodb } from "react-icons/si";
+import {
+  SiSpring,
+  SiExpress,
+  SiMongodb,
+  SiNextdotjs,
+  SiMiro,
+  SiFramer,
+  SiMarvelapp,
+  SiAdobexd,
+} from "react-icons/si";
 import { BiLogoPostgresql, BiLogoGoogleCloud } from "react-icons/bi";
-import { IoLogoFirebase, IoLogoTableau } from "react-icons/io5";
-import { FaFileExcel } from "react-icons/fa";
+import { IoLogoFirebase } from "react-icons/io5";
 import { VscAzure } from "react-icons/vsc";
 
 interface Technology {
@@ -35,30 +40,32 @@ interface Technology {
 
 const Tech: React.FC = () => {
   const techCategories: Record<string, Technology[]> = {
-    "Data Analytics": [
-      { name: "Python", icon: <FaPython /> },
-      { name: "R", icon: <FaR /> },
-      { name: "SQL", icon: <GrMysql /> },
-      { name: "Excel", icon: <FaFileExcel /> },
+    "Design Tools": [
+      { name: "Figma", icon: <FaFigma /> },
+      { name: "Adobe XD", icon: <SiAdobexd /> },
+      { name: "Sketch", icon: <FaSketch /> },
+      { name: "InVision", icon: <FaInvision /> },
     ],
-    "Machine Learning": [
-      { name: "Tensor Flow", icon: <SiTensorflow /> },
-      { name: "Keras", icon: <SiKeras /> },
-      { name: "Scikit-learn", icon: <SiScikitlearn /> },
-      { name: "PyTorch", icon: <SiPytorch /> },
+    "Prototyping Tools": [
+      { name: "Axure RP", icon: <FaA/>  },
+      { name: "Marvel App", icon: <SiMarvelapp /> },
+      { name: "Framer", icon: <SiFramer /> },
     ],
-    Visualization: [
-      { name: "Power BI", icon: <FaFileContract /> },
-      { name: "Tableau", icon: <IoLogoTableau /> },
+    "Collaboration Tools": [
+      { name: "Miro", icon: <SiMiro /> },
+      { name: "Trello", icon: <FaTrello /> },
+      { name: "Slack", icon: <FaSlack /> },
     ],
-    "Cloud Platforms": [
-      { name: "AWS", icon: <FaAws /> },
-      { name: "Azure", icon: <VscAzure /> },
-      { name: "Google Cloud", icon: <SiGooglecloud /> },
+    "Development Tools": [
+      { name: "React", icon: <FaReact />  },
+      { name: "Next.js", icon: <SiNextdotjs /> },
+      { name: "Vue.js", icon: <FaVuejs /> },
+      { name: "HTML5", icon: <FaHtml5 /> },
+      { name: "CSS3", icon: <FaCss3 /> },
     ],
   };
 
-  const [activeCategory, setActiveCategory] = useState<string>("Data Analytics");
+  const [activeCategory, setActiveCategory] = useState<string>("Design Tools");
 
   return (
     <div className="w-full max-w-4xl mx-auto mt-8">

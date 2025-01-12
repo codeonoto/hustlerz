@@ -19,10 +19,7 @@ const DataScience = () => {
             Data Science
             </h1>
             <p className="text-base lg:text-lg text-gray-400 leading-relaxed mb-6">
-              Take your business to new heights by leveraging our cutting-edge
-              app development services. Our expert developers deliver
-              world-class mobile and web app solutions that drive engagement,
-              growth, and profitability.
+            Take your business to the next level by leveraging our expert data scientists and cutting-edge data services.
             </p>
             <button className="inline-flex items-center px-6 py-3 bg-white text-gray-950 font-medium rounded-lg shadow-lg hover:bg-gray-800 hover:text-white transition duration-300 ease-in-out">
               Get Started
@@ -42,7 +39,7 @@ const DataScience = () => {
       </div>
       {/* Data Science service */}
       <div className="text-center w-11/12 flex mt-12 flex-col items-center justify-center">
-        <h1 className="text-[3rem] font-bold">Our App Development Services</h1>
+        <h1 className="text-[3rem] font-bold">Our Data Science Services</h1>
         <p>
           Elevate your business with our specialized app development services.
           We are dedicated to building scalable, secure, and high-performance
@@ -64,13 +61,10 @@ const DataScience = () => {
 
       <div className="w-11/12 flex mt-12 flex-col items-start justify-center">
         <h1 className="text-[3rem] font-bold text-start">
-          Our App Development Process
+          Our Data Science Process
         </h1>
         <p className="text-start">
-          We follow a comprehensive approach to app development, starting from
-          research and strategy to deployment and post-launch support. Each
-          phase is designed to ensure high-quality apps that meet your business
-          goals..
+        We begin by understanding your business challenges, objectives, and data environment. This allows us to define the best approach for your unique needs.
         </p>
         <Process/>
       </div>
