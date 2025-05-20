@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import feature from "@/app/image/feature.svg";
@@ -6,14 +7,14 @@ import process from "@/app/image/process.svg";
 import Image from "next/image";
 import Advantage from "./Advantage";
 
-const sharedContainerStyles = "min-h-screen p-4 sm:p-6 md:p-10 mx-auto flex items-center justify-center";
+const sharedContainerStyles = "min-h-screen p-4 sm:p-6 md:p-10 flex items-center justify-center";
 const sharedGridStyles = "grid grid-cols-1 md:grid-cols-2 gap-8 items-center";
 
 const Feature = () => {
   return (
     <>
       <div className={sharedContainerStyles}>
-        <div className={sharedGridStyles}>
+        <div className={`${sharedGridStyles} w-full`}>
           {/* Text Content */}
           <motion.div
             initial={{ x: -100, opacity: 0 }}
@@ -24,10 +25,10 @@ const Feature = () => {
             <p className="text-sm font-medium text-white bg-slate-900 inline-block px-2 py-1 rounded-3xl uppercase">
               Our Features
             </p>
-            <h3 className="text-[28px] sm:text-[36px] md:text-[50px] font-extrabold text-darkBlue text-center md:text-left mb-6">
+            <h3 className="text-[24px] sm:text-[36px] md:text-[50px] font-extrabold text-darkBlue text-center md:text-left mb-6">
               What Sets Husterz Apart
             </h3>
-            <p className="text-[16px] sm:text-[18px] md:text-[20px] text-white mt-4 text-center md:text-left font-semibold leading-relaxed">
+            <p className="text-[14px] sm:text-[18px] md:text-[20px] text-white mt-4 text-center md:text-left font-semibold leading-relaxed">
               Explore the exceptional features that make Husterz your ultimate
               web development choice.
             </p>
@@ -52,13 +53,13 @@ const Feature = () => {
             </button>
           </motion.div>
 
-          {/* Image */}
+          {/* Image (Visible only on lg screens and above) */}
           <motion.div
             initial={{ y: -100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className="flex justify-center md:justify-end"
+            className="hidden lg:block justify-center lg:justify-end"
           >
             <Image
               src={feature}
@@ -72,14 +73,14 @@ const Feature = () => {
       </div>
 
       <div className={sharedContainerStyles}>
-        <div className={sharedGridStyles}>
-          {/* Image */}
+        <div className={`${sharedGridStyles} w-full`}>
+          {/* Image (Visible only on lg screens and above) */}
           <motion.div
             initial={{ y: -100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             viewport={{ once: true }}
-            className="md:flex hidden justify-center md:justify-end"
+            className="hidden lg:block justify-center lg:justify-end"
           >
             <Image
               src={process}
@@ -96,16 +97,17 @@ const Feature = () => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
             viewport={{ once: true }}
+            className=""
           >
-            <h3 className="text-[28px] sm:text-[36px] md:text-[50px] font-extrabold text-darkBlue text-center md:text-left mb-6">
+            <h3 className="text-[24px] sm:text-[36px] md:text-[50px] font-extrabold text-darkBlue text-center md:text-left mb-6">
               What’s Different in Our Process
             </h3>
-            <p className="text-[16px] sm:text-[18px] md:text-[20px] text-white mt-4 text-center md:text-left font-semibold leading-relaxed">
+            <p className="text-[14px] sm:text-[18px] md:text-[20px] text-white mt-4 text-center md:text-left font-semibold leading-relaxed">
               Explore the exceptional features that make LandFree your ultimate
               web development choice
             </p>
 
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-col sm:flex-row">
               <button className="mt-6 bg-darkBlue text-black px-6 py-3 rounded-lg font-medium hover:bg-white transition duration-300">
                 Contact Us
               </button>
@@ -115,8 +117,8 @@ const Feature = () => {
             </div>
 
             {/* Feature Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-              {[
+            <div className="grid grid-cols-1 sm:grid-cols-2  gap-4 mt-6 ">
+              {[ 
                 { title: "Discovery Phase", description: "Understand client goals and project requirements" },
                 { title: "Planning & Strategy", description: "Develop a comprehensive roadmap and project plan" },
                 { title: "Design Prototyping", description: "Create visual mockups for the client approval" },

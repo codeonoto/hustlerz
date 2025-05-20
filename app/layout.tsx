@@ -47,10 +47,12 @@ export default function RootLayout({
         <link rel="canonical" href="https://hustlerz.com" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-space dark  bg-gray overflow-x-hidden scrollbar-corner-darkBlue`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-space dark bg-neutral-950 overflow-x-hidden scrollbar-corner-darkBlue`}
       >
         <Navbar />
-        {children}
+        <main>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

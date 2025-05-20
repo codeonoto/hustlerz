@@ -49,7 +49,7 @@ const questions: QuestionAnswer[] = [
 const QnA: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const toggleAnswer = (index: number) => {
+  const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
@@ -64,41 +64,32 @@ const QnA: React.FC = () => {
             If you have any additional questions or need further clarification, don't hesitate to get in touch with us. We're here to help you!
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {questions.map((question, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="bg-gray-800 rounded-lg p-6 shadow-lg"
-            >
-              <div
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleAnswer(index)}
+        <div className="space-y-4">
+          {questions.map((item, index) => (
+            <div key={index} className="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+              <button
+                className="w-full flex justify-between items-center p-4 text-white text-lg font-semibold cursor-pointer focus:outline-none"
+                onClick={() => toggleAccordion(index)}
               >
-                <h4 className="text-lg font-semibold text-white">
-                  {question.question}
-                </h4>
-                <div className="text-xl font-bold text-white">
+                {item.question}
+                <span className="text-xl font-bold">
                   {activeIndex === index ? '-' : '+'}
-                </div>
-              </div>
+                </span>
+              </button>
               <AnimatePresence>
                 {activeIndex === index && (
                   <motion.div
-                    key="answer"
-                    initial={{ opacity: 0, maxHeight: 0 }}
-                    animate={{ opacity: 1, maxHeight: 500 }}
-                    exit={{ opacity: 0, maxHeight: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="mt-4 text-gray-400 overflow-hidden"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="p-4 text-gray-400"
                   >
-                    <p>{question.answer}</p>
+                    <p>{item.answer}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

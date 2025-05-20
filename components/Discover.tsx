@@ -53,7 +53,7 @@ const Discover = () => {
           animate={isInView ? "visible" : "hidden"}
           variants={textVariants}
         >
-          LandFree offers a diverse array of expertly crafted services, seamlessly merging creativity
+          Hustlerz offers a diverse array of expertly crafted services, seamlessly merging creativity
           and technology to deliver solutions that exceed expectations.
         </motion.p>
 

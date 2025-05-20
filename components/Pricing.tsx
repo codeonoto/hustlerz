@@ -7,7 +7,7 @@ const Pricing = () => {
   const plans = [
     {
       name: "Starter",
-      price: "620",
+      price: "1000",
       description: "Starter-level package for starting businesses",
       features: [
         "Responsive Website Design",
@@ -60,7 +60,7 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full py-16 px-6 flex items-center justify-center ">
+    <div className="min-h-screen w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
       <div className="max-w-7xl">
         {/* Header Section */}
         <motion.div
@@ -68,12 +68,12 @@ const Pricing = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="text-center mb-12"
         >
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-darkBlue ">
+          <h3 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white">
             Service Subscription Pricing
           </h3>
-          <p className="text-lg sm:text-xl text-white mt-4">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 mt-4">
             Choose from our flexible subscription pricing plans tailored to your needs, ensuring cost-effective access to our premium services and support.
           </p>
         </motion.div>
@@ -84,34 +84,40 @@ const Pricing = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`relative bg-gray-800 rounded-lg p-8 shadow-lg ${
-                plan.name === "Pro" ? "border-4 border-darkBlue" : "border border-gray-700"
+              className={`relative bg-gray-800 rounded-lg p-6 sm:p-8 shadow-lg ${
+                plan.name === "Pro" ? "border-4 border-blue-500" : "border border-gray-700"
               }`}
             >
-              <h3 className="text-2xl font-semibold mb-4">{plan.name}</h3>
-              <p className="text-lg text-gray-400 mb-4">{plan.description}</p>
-              <p className="text-4xl font-bold text-white mb-6">
-                ${plan.price}
-                <span className="text-lg font-medium text-gray-400">/month</span>
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-white">
+                {plan.name}
+              </h3>
+              <p className="text-sm sm:text-base text-gray-400 mb-4">
+                {plan.description}
+              </p>
+              <p className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                ₹{plan.price}
+                <span className="text-sm sm:text-lg font-medium text-gray-400">
+                  /month
+                </span>
               </p>
               <ul className="list-none space-y-2">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-sm">
-                    <FaCheckCircle className="text-darkBlue mr-2" />
+                  <li key={idx} className="flex items-center text-sm sm:text-base text-gray-300">
+                    <FaCheckCircle className="text-blue-500 mr-2" />
                     {feature}
                   </li>
                 ))}
               </ul>
-              <button className="mt-8 w-full bg-darkBlue hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
+              <button className="mt-8 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded transition duration-300">
                 Subscribe Now
               </button>
               {plan.name === "Pro" && (
-                <div className="absolute top-4 right-4 bg-darkBlue text-white text-xs px-3 py-1 rounded-full uppercase">
+                <div className="absolute top-4 right-4 bg-blue-500 text-white text-xs px-3 py-1 rounded-full uppercase">
                   Most Popular
                 </div>
               )}

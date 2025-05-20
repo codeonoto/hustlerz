@@ -145,6 +145,3 @@ const Module = () => {
   };
   
   export default Module;
-  
-  
-

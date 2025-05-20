@@ -37,9 +37,7 @@ const sections: Section[] = [
     logo: <PanelsTopLeft />,
     points: [
       "Data Acquisition: Leverage APIs, web scraping, and database connections to gather structured and unstructured data.",
-
       "ETL Processes: Extract, Transform, and Load (ETL) data for better accessibility and usability.",
-
       "Data Warehousing: Build centralized repositories to store and manage your data securely.",
     ],
   },
@@ -50,12 +48,9 @@ const sections: Section[] = [
       "We specialize in developing enterprise-grade applications that streamline operations, enhance productivity, and drive business growth.",
     logo: <Building2 />,
     points: [
-      "   Descriptive Analytics: Understand past data trends and patterns to guide future decisions.",
-
+      "Descriptive Analytics: Understand past data trends and patterns to guide future decisions.",
       "Diagnostic Analytics: Discover the causes of specific trends and behaviors in your data.",
-
       "Predictive Analytics: Use machine learning and statistical models to predict future outcomes and trends.",
-
       "Business Intelligence (BI): Implement BI tools like Power BI and Tableau to visualize data and extract meaningful insights.",
     ],
   },
@@ -66,10 +61,8 @@ const sections: Section[] = [
       "We provide end-to-end e-commerce app development services, enabling you to deliver a seamless shopping experience to your customers.",
     logo: <ShoppingBag />,
     points: [
-      " Supervised Learning: Build models to predict specific outcomes based on labeled data.",
-
+      "Supervised Learning: Build models to predict specific outcomes based on labeled data.",
       "Unsupervised Learning: Detect hidden patterns and clusters in unlabeled data.",
-
       "Natural Language Processing (NLP): Extract insights from unstructured text data for applications such as sentiment analysis.",
     ],
   },
@@ -80,10 +73,8 @@ const sections: Section[] = [
       "Our app maintenance services are designed to keep your app consistently updated, secure, and performing at its best, ensuring a seamless experience for your users over time.",
     logo: <Wrench />,
     points: [
-      "  Custom Dashboards: Design intuitive dashboards that display real-time data and key performance indicators (KPIs).",
-
+      "Custom Dashboards: Design intuitive dashboards that display real-time data and key performance indicators (KPIs).",
       "Interactive Reports: Build interactive reports with dynamic elements for deep data exploration.",
-
       "Data Storytelling: Transform raw data into compelling narratives using visualizations that communicate insights clearly.",
     ],
   },
@@ -95,9 +86,7 @@ const sections: Section[] = [
     logo: <Wrench />,
     points: [
       "Regression & Classification Models: Build models to predict trends, customer behavior, and market shifts.",
-
       "Time Series Analysis: Analyze time-dependent data to forecast future events.",
-
       "Clustering & Segmentation: Group customers, products, or behaviors for targeted insights and strategies.",
     ],
   },
@@ -117,7 +106,7 @@ const Module = () => {
   }, []);
 
   return (
-    <div>
+    <div className="max-w-full">
       <div className="flex flex-col lg:flex-row mt-2">
         {/* Left side */}
         <div className="w-full lg:w-1/3 p-4">
@@ -127,7 +116,7 @@ const Module = () => {
                 key={item.id}
                 className={`cursor-pointer py-2 text-start transition duration-300 ease-in-out hover:bg-blue-500 p-3 rounded-md hover:text-white ${
                   selectedSectionId === item.id
-                    ? " text-black bg-white p-3 rounded-md font-semibold"
+                    ? "text-black bg-white p-3 rounded-md font-semibold"
                     : ""
                 }`}
                 onClick={() => setSelectedSectionId(item.id)}

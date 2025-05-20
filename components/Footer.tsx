@@ -1,6 +1,5 @@
-"use client"
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+"use client";
+import React from 'react';
 import {
   FaLinkedin,
   FaBehance,
@@ -15,30 +14,8 @@ import {
 } from 'react-icons/hi';
 
 const Footer: React.FC = () => {
-  // Create a ref for the footer element
-  const ref = useRef<HTMLDivElement>(null);
-
-  // Check if the footer is in view
-  const isInView = useInView(ref, { once: true, margin: '-20%' });
-
-  // Define animation variants
-  const variants = {
-    hidden: { y: '-100%', opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: { duration: 0.8, ease: 'easeOut' },
-    },
-  };
-
   return (
-    <motion.div
-      ref={ref}
-      className="w-full p-6 flex flex-col border-t-2 items-center justify-center"
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={variants}
-    >
+    <div className="w-full p-6 flex flex-col border-t-2 items-center justify-center">
       <div className="container mx-auto px-4 flex w-11/12 items-center flex-wrap justify-between border-b-2 p-6 gap-y-8">
         {/* Social Links */}
         <div className="w-full sm:w-1/2 lg:w-1/3">
@@ -123,7 +100,7 @@ const Footer: React.FC = () => {
       <div className="mt-5 text-center text-gray-500 text-sm">
         © 2024 Hustlerz. All rights reserved.
       </div>
-    </motion.div>
+    </div>
   );
 };
 

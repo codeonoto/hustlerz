@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <div className="flex w-11/12 items-center justify-center flex-col mx-auto">
+      <div className="container mx-auto px-4 py-6 min-h-screen">
         <Discover />
         <Feature />
         <Identity />

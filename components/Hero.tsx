@@ -86,7 +86,7 @@ const Hero = () => {
           <Image
             src={logo2}
             alt="Logo"
-            className="h-[5rem] mt-[7rem] md:mt-[6rem] w-auto md:h-[6rem]"
+            className="h-[5rem] mt-[6rem] md:mt-[6rem] w-auto md:h-[6rem]"
             priority
           />
         </div>

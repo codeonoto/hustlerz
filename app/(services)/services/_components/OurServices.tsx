@@ -179,59 +179,63 @@ const OurServices = () => {
       </motion.div>
 
       {/* Main Content */}
-      <div className="flex-1">
-        {sections.map((section, index) => (
-          <section
-            id={section.id}
-            key={section.id}
-            ref={(el) => (sectionRefs.current[section.id] = el)}
-            className={`relative h-[100vh] flex items-center px-4 p-6 sm:px-8 ${
-              index % 2 === 0 ? "text-black bg-gray-950  " : " "
-            } rounded-lg shadow-lg overflow-hidden`}
-          >
-            <div
-              ref={(el) => (parallaxRefs.current[index] = el!)}
-              className="absolute inset-0 flex items-center justify-center"
-            >
-              <Image
-                src={section.img}
-                alt=""
-                className="w-96 h-96 object-cover"
-              />
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false }}
-                transition={{ duration: 0.8 }}
-                className=" text-white p-8  bg-opacity-50 rounded-lg"
-              >
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">
-                  {section.title}
-                </h2>
-                <p className="text-base sm:text-lg lg:text-xl max-w-2xl mx-auto mb-6">
-                  {section.description}
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  {section.tech.map((techItem) => (
-                    <span
-                      key={techItem}
-                      className="px-4 py-2 bg-darkBlue border border-gray-300 rounded-full text-sm text-black font-semibold transition"
-                    >
-                      {techItem}
-                    </span>
-                  ))}
-                </div>
-
-                <Link href={section.link}>
-                  <button className="inline-flex mt-6 items-center px-6 py-3 bg-white text-gray-950 font-medium rounded-lg shadow-lg hover:bg-gray-800 hover:text-white transition duration-300 ease-in-out">
-                    Know More
-                  </button>
-                </Link>
-              </motion.div>
-            </div>
-          </section>
-        ))}
+     <div className="flex-1 ">
+  {sections.map((section, index) => (
+    <section
+      id={section.id}
+      key={section.id}
+      ref={(el) => (sectionRefs.current[section.id] = el)}
+      className="relative h-[100vh] flex items-center justify-center px-4 py-6 sm:px-8  overflow-hidden"
+    >
+      {/* Background Image */}
+      <div
+        ref={(el) => (parallaxRefs.current[index] = el!)}
+        className="absolute inset-0 flex items-center justify-center opacity-10"
+      >
+        <Image
+          src={section.img}
+          alt={section.title}
+          className="w-[500px] h-[500px] object-contain"
+        />
       </div>
+
+      {/* Content Box */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 text-white max-w-3xl w-full bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-2xl"
+      >
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 text-center sm:text-left">
+          {section.title}
+        </h2>
+        <p className="text-base sm:text-lg lg:text-xl mb-6 text-center sm:text-left text-gray-300">
+          {section.description}
+        </p>
+        <div className="flex flex-wrap gap-3 mb-6 justify-center sm:justify-start">
+          {section.tech.map((techItem) => (
+            <span
+              key={techItem}
+              className="px-4 py-2 bg-darkBlue text-white border border-white/10 rounded-full text-sm font-medium transition duration-300 hover:bg-white hover:text-black"
+            >
+              {techItem}
+            </span>
+          ))}
+        </div>
+
+        <div className="text-center sm:text-left">
+          <Link href={section.link}>
+            <button className="inline-flex items-center px-6 py-3 bg-white text-gray-950 font-medium rounded-lg shadow-lg hover:bg-darkBlue hover:text-white transition duration-300 ease-in-out">
+              Know More
+            </button>
+          </Link>
+        </div>
+      </motion.div>
+    </section>
+  ))}
+</div>
+
     </div>
   );
 };

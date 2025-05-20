@@ -24,10 +24,8 @@ const sections: Section[] = [
       "Understanding your users and business needs is the foundation of our process. We dive deep into user behavior and market trends to create designs that resonate with your target audience.",
     logo: <CodeXml />,
     points: [
-      "      User Research: We conduct surveys, interviews, and usability testing to understand user needs and pain points.",
-
+      "User Research: We conduct surveys, interviews, and usability testing to understand user needs and pain points.",
       "Competitor Analysis: Gain insights into the competition to identify opportunities for differentiation.",
-
       "Personas & Scenarios: Develop user personas and scenarios to guide the design process.",
     ],
   },
@@ -38,11 +36,9 @@ const sections: Section[] = [
       "Our UI design services focus on creating visually appealing, intuitive interfaces that provide seamless interaction with your product.",
     logo: <PanelsTopLeft />,
     points: [
-      "      Wireframing: Develop wireframes that map out the structure of each screen.",
-
-      "      Prototyping: Create interactive prototypes to test and refine user flows.",
-
-      "      Visual Design: Implement clean, modern design aesthetics to enhance usability and engagement.",
+      "Wireframing: Develop wireframes that map out the structure of each screen.",
+      "Prototyping: Create interactive prototypes to test and refine user flows.",
+      "Visual Design: Implement clean, modern design aesthetics to enhance usability and engagement.",
     ],
   },
   {
@@ -52,10 +48,8 @@ const sections: Section[] = [
       "Delivering an exceptional experience is key to user retention. We design solutions that keep the user's journey smooth, simple, and delightful.",
     logo: <Building2 />,
     points: [
-      "      Information Architecture: Structuring content effectively for easy navigation.",
-
+      "Information Architecture: Structuring content effectively for easy navigation.",
       "User Flows & Journey Mapping: Define and optimize the journey users take from start to finish.",
-
       "Usability Testing: Continuous testing and feedback integration to refine designs.",
     ],
   },
@@ -66,10 +60,8 @@ const sections: Section[] = [
       "Create engaging and interactive elements that respond intuitively to user actions, delivering an interactive experience that enhances the overall user journey.",
     logo: <ShoppingBag />,
     points: [
-      "      Micro-interactions: Small, responsive animations that guide users and enhance usability.",
-
+      "Micro-interactions: Small, responsive animations that guide users and enhance usability.",
       "Motion Design: Use animations and transitions to enrich the experience without overwhelming the user.",
-
       "Responsive Design: Ensure designs are adaptable and functional across all devices and screen sizes.",
     ],
   },
@@ -77,13 +69,11 @@ const sections: Section[] = [
     id: 5,
     title: "Mobile App Design",
     description:
-      "Our team specializes in designing intuitive and high-performance mobile app experiences.",
+      "Our team specializes in designing intuitive and high-performance mobile app experiences, delivering an interactive experience that enhances the overall user journey",
     logo: <Wrench />,
     points: [
       "Platform-Specific Design: Tailored designs for iOS and Android to match platform guidelines.",
-
       "App Navigation Design: Simple and intuitive app navigation flows for a frictionless experience.",
-
       "Touch Gestures: Optimize designs for mobile interactions like swiping, tapping, and pinching.",
     ],
   },
@@ -95,9 +85,7 @@ const sections: Section[] = [
     logo: <Wrench />,
     points: [
       "Responsive Web Design: Create designs that perform flawlessly on any device or browser.",
-
       "Conversion Optimization: Focus on designs that convert visitors into customers.",
-
       "Performance Optimization: Enhance site loading speed and overall user experience.",
     ],
   },

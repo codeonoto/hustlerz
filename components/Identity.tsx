@@ -45,7 +45,7 @@ const achievements = [
 const Identity = () => {
   return (
     <div className="min-h-screen w-full p-4 md:p-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+      <div className="max-w-7xl  grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
         {/* Image Section */}
         <motion.div
           initial={{ y: -50, opacity: 0 }}

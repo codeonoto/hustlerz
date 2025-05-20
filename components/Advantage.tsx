@@ -53,7 +53,7 @@ const Advantage = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <h3 className="text-[28px] sm:text-[36px] md:text-[50px] font-extrabold text-darkBlue text-center md:text-left mb-6">
-          Unlock the Advantages of Choosing LandFree
+          Unlock the Advantages of Choosing Hustlerz
         </h3>
         <p className="text-[16px] sm:text-[18px] md:text-[20px] text-white mt-4 text-center md:text-left font-semibold leading-relaxed">
           Discover the array of benefits that come with selecting LandFree,
