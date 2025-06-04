@@ -109,7 +109,10 @@ function NavbarDemo({ className }: { className?: string }) {
         <MenuItem setActive={setActive}  active={active} item="Home">
         </MenuItem>
         </Link>
-        <MenuItem setActive={setActive} active={active} item="About"></MenuItem>
+        <Link href="/about">
+          <MenuItem setActive={setActive} active={active} item="About">
+          </MenuItem>
+        </Link>
         <Link href="/services">
           <MenuItem
             setActive={setActive}
@@ -129,14 +132,11 @@ function NavbarDemo({ className }: { className?: string }) {
             {/* Add Product Items here */}
           </div>
         </MenuItem>
+        <Link href="/pricing">
         <MenuItem setActive={setActive} active={active} item="Pricing">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/">Starter</HoveredLink>
-            <HoveredLink href="/">Basic</HoveredLink>
-            <HoveredLink href="/">Pro</HoveredLink>
-            <HoveredLink href="/">Enterprise</HoveredLink>
-          </div>
         </MenuItem>
+        </Link>
+
       </Menu>
     </div>
   );
